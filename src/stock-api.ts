@@ -61,6 +61,7 @@ export class StockAPIClient {
   }
 
   private normalizeMarketState(state: string): MarketState {
+    if (!state) return MarketState.CLOSED;
     const normalized = state.toUpperCase();
     
     switch (normalized) {
